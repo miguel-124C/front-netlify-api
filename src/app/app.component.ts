@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'front-netlify-api';
+
+  hash = document.location.hash;
+
+  ngOnInit(): void {
+    console.log(this.hash)
+  }
+
 }
